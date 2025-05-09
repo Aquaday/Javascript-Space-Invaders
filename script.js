@@ -98,6 +98,9 @@ function shoot(e) {
   let currentLaserIndex = currentShooterIndex
 
 function moveLaser() {
+  if (currentLaserIndex < 0){
+    clearInterval(laserID)
+  } else {
   squares[currentLaserIndex].classList.remove("laser")
 
   currentLaserIndex -= width
@@ -119,10 +122,11 @@ function moveLaser() {
       aliensRemoved.push(alienRemoved)
       results++
       resultDisplay.innerHTML = results
-  }
-  
+      
+    }
+    
 }
-
+}
 if (e.key === "ArrowUp") {
   laserID = setInterval(moveLaser, 100)
 }
