@@ -32,3 +32,20 @@ ul {
   border: 1px solid red;
   box-sizing: border-box;
 }
+
+.invader {
+  background-color: blue;
+  border-radius: 10px;
+}
+
+.shooter {
+  background-color: green;
+}
+
+.laser {
+  background-color: orange;
+}
+
+.boom {
+  background-color: red;
+}
