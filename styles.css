@@ -29,7 +29,6 @@ ul {
 .grid div {
   width: 20px;
   height: 20px;
-  border: 1px solid red;
   box-sizing: border-box;
 }
 
