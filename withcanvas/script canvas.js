@@ -10,8 +10,6 @@ let context
 let shooterX = blockSize * 5
 let shootherY = blockSize * 5
 
-let velocityX = 0
-
 let alienInvaderX = 0
 let alienInvaderY = 0
 
@@ -21,6 +19,10 @@ let yDirection = 0
 
 let gameOver = false
 
+let aliensArray = [
+  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 30, 31, 32,
+  33, 34, 35, 36, 37,38,39
+]
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -35,6 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 
+
+
 function update() {
 
   console.log("updating")
@@ -45,27 +49,72 @@ function update() {
   context.fillStyle = "white"
   context.fillRect(0, 0, board.width, board.height)
 
-  context.fillStyle= "blue"
-  for (let i = 0; i < alienInvaders; i++) {
-    
-    context.fillRect(alienInvaderX, alienInvaderY, blockSize, blockSize)
-    alienInvaderX += blockSize
-    
-    if (alienInvaderX === blockSize * columns) {
-      alienInvaderY += blockSize
-    }
-    
-    console.log(alienInvaderX, alienInvaderY, alienInvaderX % board.width)
-  }
+  
 
-  // const rightEdge = alienInvaders[alienInvaders.length - 1] % width === width -1
 
-  if (alienInvaderX === board.width){
-  alienInvaderY += 25
-  alienInvaderX = 0
-  }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function update() {
+
+//   console.log("updating")
+//   if (gameOver) {
+//     return
+//   }
+
+//   context.fillStyle = "white"
+//   context.fillRect(0, 0, board.width, board.height)
+
+//   context.fillStyle= "blue"
+
+//   if (xDirection === 0) {
+//     for (let i = 0; i < alienInvaders; i++) {
+//       if (alienInvaderX > board.width){
+
+//         alienInvaderY += 25
+//         xDirection = -1
+//         }
+      
+//       context.fillRect(alienInvaderX, alienInvaderY, blockSize, blockSize)
+//       alienInvaderX += blockSize
+      
+
+//     }
+//   } else {
+//     for (let i = 0; i < alienInvaders; i++) {
+//       if (alienInvaderX === 0){
+//         alienInvaderY += 25
+//         xDirection = 0
+//         }
+//       context.fillRect(alienInvaderX, alienInvaderY, blockSize, blockSize)
+//       alienInvaderX -= blockSize
+  
+//       console.log(alienInvaderX, alienInvaderY, alienInvaderX % board.width)
+//     }
+//     if (alienInvaderX === blockSize * columns) {
+//       alienInvaderY += blockSize
+//     }
+//   }
+
+ 
+
+//   // const rightEdge = alienInvaders[alienInvaders.length - 1] % width === width -1
+
+
+
+// }
 
 
 
